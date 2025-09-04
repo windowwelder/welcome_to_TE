@@ -44,4 +44,10 @@ const BALLONS: { [key: string]: BallonI } = {
 	},
 };
 
+/* Напишите код, который получает количество всех `isPublic` шариков с помощью `fetchBallonAmount` функции 
+и суммирует общее количество полученых шариков.Существующий код задачи редактировать нельзя. */
+
 // Ваш код здесь
+
+const publicBallon = Object.values(BALLONS).filter( el => el.isPublic)
+
