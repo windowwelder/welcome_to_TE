@@ -55,5 +55,7 @@ const publicBallonId = publicBallon.map( el => el.id)
 
 const publicBallonAmounts = publicBallonId.map( el => fetchBallonAmount(el))
 
+const sumOfPublicBallons = publicBallonAmounts.reduce( (a,b) => a + b, 0 )
+
 /* fetchBallonAmount() */
 
