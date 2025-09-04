@@ -2,13 +2,19 @@ import { useState } from "react";
 
 /* Оптимизируйте код. */
 
-export const Block1 = ({ mouseEnterCallbak, imgSrc, imgAlt }) => {
+const useStateAndHandler = () => {
   const [isActive, setActive] = useState(false);
 
   const mouseEnterHandler = () => {
     setActive(true);
     mouseEnterCallbak();
   };
+  return { isActive, mouseEnterHandler }
+}
+
+export const Block1 = ({ mouseEnterCallbak, imgSrc, imgAlt }) => {
+
+  const { isActive, mouseEnterHandler } = useStateAndHandler(mouseEnterCallbak)
 
   return (
     <div onMouseEnter={mouseEnterHandler} className={isActive ? "active" : ""}>
@@ -18,12 +24,8 @@ export const Block1 = ({ mouseEnterCallbak, imgSrc, imgAlt }) => {
 };
 
 export const Block2 = ({ mouseEnterCallbak, content }) => {
-  const [isActive, setActive] = useState(false);
 
-  const mouseEnterHandler = () => {
-    setActive(true);
-    mouseEnterCallbak();
-  };
+  const { isActive, mouseEnterHandler } = useStateAndHandler(mouseEnterCallbak)
 
   return (
     <div onMouseEnter={mouseEnterHandler} className={isActive ? "active" : ""}>
@@ -33,12 +35,8 @@ export const Block2 = ({ mouseEnterCallbak, content }) => {
 };
 
 export const Block3 = ({ mouseEnterCallbak, userData }) => {
-  const [isActive, setActive] = useState(false);
-
-  const mouseEnterHandler = () => {
-    setActive(true);
-    mouseEnterCallbak();
-  };
+  
+  const { isActive, mouseEnterHandler } = useStateAndHandler(mouseEnterCallbak)
 
   return (
     <div onMouseEnter={mouseEnterHandler} className={isActive ? "active" : ""}>
