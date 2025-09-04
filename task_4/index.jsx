@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+/* Оптимизируйте код. */
+
 export const Block1 = ({ mouseEnterCallbak, imgSrc, imgAlt }) => {
   const [isActive, setActive] = useState(false);
 
