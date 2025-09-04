@@ -26,8 +26,7 @@ const ComponentOne = () => {
     );
 };
 
-const ComponentTwo = () => {
-    const { data } = useSWR('custom_key_2', () => fetchOnePost({ delayMS: 2000 }));
+const ComponentTwo = ( data ) => {
     //...some logic
 
     return data ? (
@@ -43,13 +42,14 @@ const ComponentTwo = () => {
 
 export default function Home() {
     const [showComponentTwo, setShowComponentTwo] = useState(false);
+    const { data } = useSWR('custom_key_2', () => fetchOnePost({ delayMS: 2000 }));
 
     return (
         <main className={styles.main}>
             <div className={styles.description}>
                 <ComponentOne />
                 {showComponentTwo ? (
-                    <ComponentTwo />
+                    <ComponentTwo data={data}/>
                 ) : (
                     <button className={styles.btn} onClick={() => setShowComponentTwo(true)}>
                         Show ComponentTwo
