@@ -51,3 +51,7 @@ const BALLONS: { [key: string]: BallonI } = {
 
 const publicBallon = Object.values(BALLONS).filter( el => el.isPublic)
 
+const publicBallonId = publicBallon.map( el => el.id)
+
+/* fetchBallonAmount() */
+
