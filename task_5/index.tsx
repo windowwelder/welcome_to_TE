@@ -26,7 +26,9 @@ const ComponentOne = () => {
     );
 };
 
-const ComponentTwo = ( data ) => {
+type Props = { title: string, body: string}
+
+const ComponentTwo = ( { data }: { data: Props } ) => {
     //...some logic
 
     return data ? (
