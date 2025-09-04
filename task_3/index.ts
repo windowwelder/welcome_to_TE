@@ -54,6 +54,7 @@ async function getSumOfPublicBallons() {
 	const publicBallonId = publicBallon.map( el => el.id)
 	const publicBallonAmounts = await Promise.all(publicBallonId.map( el => fetchBallonAmount(el)))
 	const sumOfPublicBallons = publicBallonAmounts.reduce( (a,b) => a + b, 0 )
+	console.log(sumOfPublicBallons)
 }
 
 /* fetchBallonAmount() */
