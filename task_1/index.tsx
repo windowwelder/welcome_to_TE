@@ -1,4 +1,4 @@
-import { Component, memo } from 'react';
+import { Component } from 'react';
 
 type IUser = {
     name: string
@@ -45,5 +45,3 @@ class FourthComponent extends Component<IProps> {
         )
     }
 }
-
-export default memo(FirstComponent)
