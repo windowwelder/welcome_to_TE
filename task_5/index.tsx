@@ -7,6 +7,10 @@ import styles from './page.module.css';
 
 import { fetchOnePost } from '@/libs/fetchOnePost';
 
+/* Сделайте правку, чтобы после загрузки и рендера первого компонента, второй - после нажатия на кнопку `Show ComponentTwo`
+отображался сразу без состояния загрузки. */
+
+
 const ComponentOne = () => {
     const { data } = useSWR('custom_key_1', fetchOnePost);
     //...some logic
