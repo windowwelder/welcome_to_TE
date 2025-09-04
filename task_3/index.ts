@@ -53,7 +53,7 @@ const publicBallon = Object.values(BALLONS).filter( el => el.isPublic)
 
 const publicBallonId = publicBallon.map( el => el.id)
 
-const publicBallonAmounts = publicBallonId.map( el => fetchBallonAmount(el))
+const publicBallonAmounts = await Promise.all(publicBallonId.map( el => fetchBallonAmount(el)))
 
 const sumOfPublicBallons = publicBallonAmounts.reduce( (a,b) => a + b, 0 )
 
